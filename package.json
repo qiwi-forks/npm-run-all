@@ -1,5 +1,5 @@
 {
-  "name": "npm-run-all",
+  "name": "@qiwi/npm-run-all",
   "version": "4.1.5",
   "description": "A CLI tool to run multiple npm-scripts in parallel or sequential.",
   "bin": {
@@ -24,8 +24,8 @@
     "pretest": "node scripts/make-slink.js && npm run lint",
     "preversion": "npm test",
     "postversion": "git push && git push --tags",
-    "test": "nyc --require babel-register npm run _mocha",
-    "watch": "npm run _mocha -- --require babel-register --watch --growl",
+    "test": "nyc npm run _mocha",
+    "watch": "npm run _mocha -- --require @babel/register --watch --growl",
     "codecov": "nyc report -r lcovonly && codecov"
   },
   "dependencies": {
@@ -41,21 +41,21 @@
   },
   "devDependencies": {
     "@types/node": "^4.9.1",
-    "babel-plugin-transform-async-to-generator": "^6.24.1",
-    "babel-preset-power-assert": "^2.0.0",
-    "babel-register": "^6.26.0",
+    "babel-preset-power-assert": "^3.0.0",
+    "@babel/core": "^7.12.10",
+    "@babel/register": "^7.12.10",
+    "@babel/plugin-transform-async-to-generator": "^7.12.1",
     "codecov": "^3.1.0",
     "eslint": "^4.19.1",
     "eslint-config-mysticatea": "^12.0.0",
     "fs-extra": "^7.0.1",
-    "mocha": "^5.2.0",
-    "nyc": "^11.9.0",
+    "mocha": "^7.2.0",
+    "nyc": "^15.1.0",
     "p-queue": "^2.4.2",
     "power-assert": "^1.6.1",
     "rimraf": "^2.6.2",
     "yarn": "^1.12.3"
   },
-  "repository": "mysticatea/npm-run-all",
   "keywords": [
     "cli",
     "command",
@@ -71,8 +71,12 @@
   ],
   "author": "Toru Nagashima",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/mysticatea/npm-run-all/issues"
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:qiwi-forks/npm-run-all.git"
   },
-  "homepage": "https://github.com/mysticatea/npm-run-all"
+  "bugs": {
+    "url": "https://github.com/qiwi-forks/npm-run-all/issues"
+  },
+  "homepage": "https://github.com/qiwi-forks/npm-run-all"
 }
