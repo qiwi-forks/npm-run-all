@@ -3,6 +3,7 @@
     "extends": ["mysticatea", "mysticatea/node"],
     "rules": {
         "prefer-rest-params": "off",
-        "prefer-spread": "off"
+        "prefer-spread": "off",
+        "node/no-unsupported-features": "off"
     }
 }

@@ -52,7 +52,7 @@ describe("[aggregated-output] npm-run-all", () => {
         it("Node API with parallel", async () => {
             await nodeApi(
                 ["test-task:delayed first 5000", "test-task:delayed second 1000", "test-task:delayed third 3000"],
-                { stdout, parallel: true, silent: true, aggregateOutput: true }
+                { stdout, parallel: true, silent: true, aggregateOutput: true },
             )
             assert.equal(stdout.value, EXPECTED_PARALLELIZED_TEXT)
         })
@@ -61,7 +61,7 @@ describe("[aggregated-output] npm-run-all", () => {
             try {
                 await nodeApi(
                     ["test-task:delayed first 5000", "test-task:delayed second 1000", "test-task:delayed third 3000"],
-                    { stdout, silent: true, aggregateOutput: true }
+                    { stdout, silent: true, aggregateOutput: true },
                 )
             }
             catch (_err) {
@@ -73,7 +73,7 @@ describe("[aggregated-output] npm-run-all", () => {
         it("npm-run-all command with parallel", async () => {
             await runAll(
                 ["--parallel", "test-task:delayed first 5000", "test-task:delayed second 1000", "test-task:delayed third 3000", "--silent", "--aggregate-output"],
-                stdout
+                stdout,
             )
             assert.equal(stdout.value, EXPECTED_PARALLELIZED_TEXT)
         })
@@ -82,7 +82,7 @@ describe("[aggregated-output] npm-run-all", () => {
             try {
                 await runAll(
                     ["test-task:delayed first 5000", "test-task:delayed second 1000", "test-task:delayed third 3000", "--silent", "--aggregate-output"],
-                    stdout
+                    stdout,
                 )
             }
             catch (_err) {
@@ -95,7 +95,7 @@ describe("[aggregated-output] npm-run-all", () => {
             try {
                 await runSeq(
                     ["test-task:delayed first 5000", "test-task:delayed second 1000", "test-task:delayed third 3000", "--silent", "--aggregate-output"],
-                    stdout
+                    stdout,
                 )
             }
             catch (_err) {
@@ -112,7 +112,7 @@ describe("[aggregated-output] npm-run-all", () => {
                     "test-task:delayed third 3000",
                     "--silent", "--aggregate-output",
                 ],
-                stdout
+                stdout,
             )
             assert.equal(stdout.value, EXPECTED_PARALLELIZED_TEXT)
         })

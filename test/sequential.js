@@ -131,7 +131,7 @@ describe("[sequencial] npm-run-all", () => {
         it("npm-run-all command", async () => {
             await spawnWithKill(
                 "node",
-                ["../bin/npm-run-all.js", "test-task:append2 a"]
+                ["../bin/npm-run-all.js", "test-task:append2 a"],
             )
             assert(result() == null || result() === "a")
         })
@@ -139,7 +139,7 @@ describe("[sequencial] npm-run-all", () => {
         it("run-s command", async () => {
             await spawnWithKill(
                 "node",
-                ["../bin/run-s/index.js", "test-task:append2 a"]
+                ["../bin/run-s/index.js", "test-task:append2 a"],
             )
             assert(result() == null || result() === "a")
         })

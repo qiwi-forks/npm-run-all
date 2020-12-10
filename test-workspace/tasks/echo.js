@@ -45,5 +45,5 @@ flow(
     },
     () => {
         process.stdout.write(`\n${text}`)
-    }
+    },
 )

@@ -140,7 +140,7 @@ describe("[print-label] npm-run-all", () => {
             const stdout = new BufferStream()
             await nodeApi(
                 ["test-task:echo a", "test-task:echo abcd", "test-task:echo ab"],
-                { stdout, silent: true, printLabel: true }
+                { stdout, silent: true, printLabel: true },
             )
             assert.equal(stdout.value, EXPECTED_TEXT)
         })
@@ -149,7 +149,7 @@ describe("[print-label] npm-run-all", () => {
             const stdout = new BufferStream()
             await runAll(
                 ["test-task:echo a", "test-task:echo abcd", "test-task:echo ab", "--silent", "--print-label"],
-                stdout
+                stdout,
             )
             assert.equal(stdout.value, EXPECTED_TEXT)
         })
@@ -158,7 +158,7 @@ describe("[print-label] npm-run-all", () => {
             const stdout = new BufferStream()
             await runSeq(
                 ["test-task:echo a", "test-task:echo abcd", "test-task:echo ab", "--silent", "--print-label"],
-                stdout
+                stdout,
             )
             assert.equal(stdout.value, EXPECTED_TEXT)
         })
@@ -183,7 +183,7 @@ describe("[print-label] npm-run-all", () => {
             const stdout = new BufferStream()
             await nodeApi(
                 ["test-task:echo a", "test-task:echo abcd", "test-task:echo ab"],
-                { stdout, parallel: true, printLabel: true }
+                { stdout, parallel: true, printLabel: true },
             )
             for (const line of EXPECTED_LINES) {
                 assert(stdout.value.indexOf(line) !== -1)
@@ -197,7 +197,7 @@ describe("[print-label] npm-run-all", () => {
             const stdout = new BufferStream()
             await runAll(
                 ["--parallel", "test-task:echo a", "test-task:echo abcd", "test-task:echo ab", "--print-label"],
-                stdout
+                stdout,
             )
             for (const line of EXPECTED_LINES) {
                 assert(stdout.value.indexOf(line) !== -1)
@@ -211,7 +211,7 @@ describe("[print-label] npm-run-all", () => {
             const stdout = new BufferStream()
             await runPar(
                 ["test-task:echo a", "test-task:echo abcd", "test-task:echo ab", "--print-label"],
-                stdout
+                stdout,
             )
             for (const line of EXPECTED_LINES) {
                 assert(stdout.value.indexOf(line) !== -1)

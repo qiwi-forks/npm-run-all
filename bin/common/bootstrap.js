@@ -34,7 +34,7 @@ module.exports = function bootstrap(name) {
             return require(`../${name}/main`)(
                 argv,
                 process.stdout,
-                process.stderr
+                process.stderr,
             ).then(
                 () => {
                     // I'm not sure why, but maybe the process never exits
@@ -43,7 +43,7 @@ module.exports = function bootstrap(name) {
                 },
                 () => {
                     process.exit(1)
-                }
+                },
             )
     }
 }

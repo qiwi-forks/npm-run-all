@@ -35,7 +35,7 @@ describe("[mixed] npm-run-all", () => {
             result() === "aabcbcddee" ||
             result() === "aabccbddee" ||
             result() === "aacbbcddee" ||
-            result() === "aacbcbddee"
+            result() === "aacbcbddee",
         )
     })
 
@@ -48,7 +48,7 @@ describe("[mixed] npm-run-all", () => {
             result() === "bcbcddee" ||
             result() === "bccbddee" ||
             result() === "cbbcddee" ||
-            result() === "cbcbddee"
+            result() === "cbcbddee",
         )
     })
 
@@ -58,6 +58,5 @@ describe("[mixed] npm-run-all", () => {
             "-p", "test-task:append b", "test-task:append c",
             "-s", "test-task:append d", "test-task:append e",
             "-r",
-        ])
-    )
+        ]))
 })

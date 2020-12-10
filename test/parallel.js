@@ -41,7 +41,8 @@ describe("[parallel]", () => {
                 result() === "abab" ||
                         result() === "baba" ||
                         result() === "abba" ||
-                        result() === "baab")
+                        result() === "baab",
+            )
         })
 
         it("npm-run-all command", async () => {
@@ -50,7 +51,8 @@ describe("[parallel]", () => {
                 result() === "abab" ||
                         result() === "baba" ||
                         result() === "abba" ||
-                        result() === "baab")
+                        result() === "baab",
+            )
         })
 
         it("run-p command", async () => {
@@ -59,7 +61,8 @@ describe("[parallel]", () => {
                 result() === "abab" ||
                         result() === "baba" ||
                         result() === "abba" ||
-                        result() === "baab")
+                        result() === "baab",
+            )
         })
     })
 
@@ -141,7 +144,7 @@ describe("[parallel]", () => {
         it("npm-run-all command", async () => {
             await spawnWithKill(
                 "node",
-                ["../bin/npm-run-all/index.js", "--parallel", "test-task:append2 a"]
+                ["../bin/npm-run-all/index.js", "--parallel", "test-task:append2 a"],
             )
             assert(result() == null || result() === "a")
         })
@@ -149,7 +152,7 @@ describe("[parallel]", () => {
         it("run-p command", async () => {
             await spawnWithKill(
                 "node",
-                ["../bin/run-p/index.js", "test-task:append2 a"]
+                ["../bin/run-p/index.js", "test-task:append2 a"],
             )
             assert(result() == null || result() === "a")
         })
@@ -165,7 +168,7 @@ describe("[parallel]", () => {
                     result() === "abab" ||
                     result() === "baba" ||
                     result() === "abba" ||
-                    result() === "baab"
+                    result() === "baab",
                 )
                 return
             }
@@ -181,7 +184,7 @@ describe("[parallel]", () => {
                     result() === "abab" ||
                     result() === "baba" ||
                     result() === "abba" ||
-                    result() === "baab"
+                    result() === "baab",
                 )
                 return
             }
@@ -197,7 +200,7 @@ describe("[parallel]", () => {
                     result() === "abab" ||
                     result() === "baba" ||
                     result() === "abba" ||
-                    result() === "baab"
+                    result() === "baab",
                 )
                 return
             }
@@ -213,7 +216,7 @@ describe("[parallel]", () => {
                     result() === "abab" ||
                     result() === "baba" ||
                     result() === "abba" ||
-                    result() === "baab"
+                    result() === "baab",
                 )
                 return
             }
@@ -229,7 +232,7 @@ describe("[parallel]", () => {
                     result() === "abab" ||
                     result() === "baba" ||
                     result() === "abba" ||
-                    result() === "baab"
+                    result() === "baab",
                 )
                 return
             }
@@ -289,7 +292,7 @@ describe("[parallel]", () => {
                 result() === "ababcc" ||
                 result() === "babacc" ||
                 result() === "abbacc" ||
-                result() === "baabcc"
+                result() === "baabcc",
             )
         })
 
@@ -299,7 +302,7 @@ describe("[parallel]", () => {
                 result() === "ababcc" ||
                 result() === "babacc" ||
                 result() === "abbacc" ||
-                result() === "baabcc"
+                result() === "baabcc",
             )
         })
 
@@ -309,7 +312,7 @@ describe("[parallel]", () => {
                 result() === "ababcc" ||
                 result() === "babacc" ||
                 result() === "abbacc" ||
-                result() === "baabcc"
+                result() === "baabcc",
             )
         })
     })
