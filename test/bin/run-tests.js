@@ -5,11 +5,9 @@
  */
 "use strict"
 
-/*
- * Run tests in parallel.
- * This can reduce the spent time of tests to 1/3, but this is badly affecting to the timers in tests.
- * I need more investigation.
- */
+// Run tests in parallel.
+// This can reduce the spent time of tests to 1/3, but this is badly affecting to the timers in tests.
+// I need more investigation.
 
 //------------------------------------------------------------------------------
 // Requirements
@@ -56,7 +54,7 @@ function runMocha(filePath, workspacePath) {
         const cp = spawn(
             process.execPath,
             [MOCHA_PATH, filePath, "--reporter", "dot", "--timeout", "120000"],
-            { cwd: workspacePath, stdio: ["ignore", "pipe", "inherit"] }
+            { cwd: workspacePath, stdio: ["ignore", "pipe", "inherit"] },
         )
 
         let resultText = ""
@@ -145,7 +143,7 @@ async function runMochaWithWorkspace(filePath) {
         (await fs.readdir(ROOT_PATH))
             .filter(fileName => path.extname(fileName) === ".js")
             .map(fileName => path.join(ROOT_PATH, fileName))
-            .map(filePath => queue.add(() => runMochaWithWorkspace(filePath)))
+            .map(filePath => queue.add(() => runMochaWithWorkspace(filePath))),
     )
 
     process.stdout.write("\n\n")

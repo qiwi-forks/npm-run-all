@@ -53,10 +53,10 @@ module.exports = function npmRunAll(args, stdout, stderr) {
                         race: group.parallel && argv.race,
                         npmPath: argv.npmPath,
                         aggregateOutput: group.parallel && argv.aggregateOutput,
-                    }
+                    },
                 ))
             },
-            Promise.resolve(null)
+            Promise.resolve(null),
         )
 
         if (!argv.silent) {

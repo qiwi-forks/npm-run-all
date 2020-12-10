@@ -12,7 +12,7 @@ try {
     fs.symlinkSync(
         path.resolve(__dirname, "../test/lib"),
         path.resolve(__dirname, "../test-workspace/tasks/lib"),
-        "junction"
+        "junction",
     )
 }
 catch (err) {

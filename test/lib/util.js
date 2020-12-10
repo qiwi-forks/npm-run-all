@@ -38,7 +38,7 @@ function spawn(filePath, args, stdout, stderr) {
         const child = cp.spawn(
             process.execPath,
             [filePath].concat(args),
-            { stdio: "pipe" }
+            { stdio: "pipe" },
         )
         const out = new BufferStream()
         const error = new BufferStream()

@@ -63,7 +63,7 @@ function createPackageConfig() {
 function addGroup(groups, initialValues) {
     groups.push(Object.assign(
         { parallel: false, patterns: [] },
-        initialValues || {}
+        initialValues || {},
     ))
 }
 
@@ -197,7 +197,7 @@ function parseCLIArgsCore(set, args) {    // eslint-disable-line complexity
                         set.packageConfig,
                         matched[1],
                         matched[2],
-                        matched[3] || args[++i]
+                        matched[3] || args[++i],
                     )
                 }
                 else if ((matched = CONFIG_OPTION.exec(arg))) {
@@ -206,7 +206,7 @@ function parseCLIArgsCore(set, args) {    // eslint-disable-line complexity
                 else if (CONCAT_OPTIONS.test(arg)) {
                     parseCLIArgsCore(
                         set,
-                        arg.slice(1).split("").map(c => `-${c}`)
+                        arg.slice(1).split("").map(c => `-${c}`),
                     )
                 }
                 else if (arg[0] === "-") {

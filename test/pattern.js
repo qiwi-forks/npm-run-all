@@ -50,7 +50,7 @@ describe("[pattern] it should run matched tasks if glob like patterns are given.
                 result() === "abab" ||
                 result() === "abba" ||
                 result() === "baba" ||
-                result() === "baab"
+                result() === "baab",
             )
         })
     })
@@ -94,7 +94,7 @@ describe("[pattern] it should run matched tasks if glob like patterns are given.
                 result() === "baba" ||
                 result() === "baab" ||
                 result() === "abab" ||
-                result() === "abba"
+                result() === "abba",
             )
         })
     })
