@@ -15,7 +15,8 @@ jobs:
       script:
         - yarn build
         - if [ "$CI_TEST" != "false" ]; then
-            yarn test;
+            # WTF notice: test fails if run through yarn
+            npm run test;
           fi
     - &build
       stage: build
@@ -43,7 +44,7 @@ jobs:
       if: branch = master AND type = pull_request AND env(CI_TEST) != false
       stage: test
       install: skip
-      script: yarn test
+      script: npm run test
       workspaces:
         use: linux-shared
     - <<: *test
@@ -56,9 +57,9 @@ jobs:
           fi
       script:
         - if [ "$CC_TEST_REPORTER_ID" != "" ]; then
-            yarn test:report;
+            npm run test:report;
           else
-            yarn test;
+            npm run test;
           fi
       after_script:
         - if [ "$CC_TEST_REPORTER_ID" != "" ]; then

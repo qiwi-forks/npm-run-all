@@ -17,15 +17,14 @@
     "node": ">= 10"
   },
   "scripts": {
-    "build": "yarn docs",
     "_mocha": "mocha \"test/*.js\" --timeout 120000",
     "clean": "rimraf .nyc_output coverage jsdoc \"test-workspace/{build,test.txt}\"",
     "docs": "jsdoc -c jsdoc.json",
     "lint": "eslint bin lib scripts test \"test-workspace/tasks/*.js\"",
     "lint:fix": "yarn lint -- --fix",
-    "pretest": "node scripts/make-slink.js && yarn lint",
-    "test": "nyc yarn _mocha",
-    "watch": "yarn _mocha -- --require @babel/register --watch --growl",
+    "pretest": "node scripts/make-slink.js",
+    "test": "nyc mocha \"test/*.js\" --timeout 120000",
+    "watch": "npm run _mocha -- --require @babel/register --watch --growl",
     "codecov": "nyc report -r lcovonly && codecov"
   },
   "dependencies": {
@@ -50,7 +49,7 @@
     "eslint-plugin-eslint-comments": "^3.2.0",
     "eslint-config-mysticatea": "^13.0.2",
     "fs-extra": "^9.0.1",
-    "mocha": "^7.2.0",
+    "mocha": "^8.2.1",
     "nyc": "^15.1.0",
     "p-queue": "^6.6.2",
     "power-assert": "^1.6.1",
