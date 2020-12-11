@@ -26,7 +26,8 @@
     "pretest": "node scripts/make-slink.js",
     "test": "nyc mocha \"test/*.js\" --timeout 120000",
     "watch": "npm run _mocha -- --require @babel/register --watch --growl",
-    "codecov": "nyc report -r lcovonly && codecov"
+    "codecov": "nyc report -r lcovonly && codecov",
+    "postupdate": "yarn && npx yarn-audit-fix && npm run test"
   },
   "dependencies": {
     "ansi-styles": "^5.0.0",
