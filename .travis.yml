@@ -12,10 +12,10 @@ jobs:
     - stage: verify
       if: branch != master AND type != pull_request
       install: yarn
+      # WTF notice: test fails if run through yarn
       script:
         - yarn build
         - if [ "$CI_TEST" != "false" ]; then
-            # WTF notice: test fails if run through yarn
             npm run test;
           fi
     - &build
