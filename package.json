@@ -27,33 +27,36 @@
     "test": "nyc mocha \"test/*.js\" --timeout 120000",
     "watch": "npm run _mocha -- --require @babel/register --watch --growl",
     "codecov": "nyc report -r lcovonly && codecov",
-    "postupdate": "yarn && npx yarn-audit-fix && npm run test"
+    "postupdate": "yarn && npx yarn-audit-fix --only=prod && npm run test"
+  },
+  "resolutions": {
+    "**/underscore": "^1.13.1"
   },
   "dependencies": {
-    "ansi-styles": "^5.0.0",
-    "chalk": "^4.1.0",
+    "ansi-styles": "^5.2.0",
+    "chalk": "^4.1.1",
     "cross-spawn": "^7.0.3",
     "memorystream": "^0.3.1",
     "minimatch": "^3.0.4",
     "pidtree": "^0.5.0",
     "read-pkg": "^5.2.0",
     "shell-quote": "^1.7.2",
-    "string.prototype.padend": "^3.1.1"
+    "string.prototype.padend": "^3.1.2"
   },
   "devDependencies": {
-    "@types/node": "^14.14.12",
+    "@types/node": "^15.0.2",
     "babel-preset-power-assert": "^3.0.0",
-    "@babel/core": "^7.12.10",
-    "@babel/register": "^7.12.10",
-    "@babel/plugin-transform-async-to-generator": "^7.12.1",
-    "codecov": "^3.8.1",
-    "eslint": "^7.15.0",
+    "@babel/core": "^7.14.0",
+    "@babel/register": "^7.13.16",
+    "@babel/plugin-transform-async-to-generator": "^7.13.0",
+    "codecov": "^3.8.2",
+    "eslint": "^7.26.0",
     "eslint-plugin-eslint-comments": "^3.2.0",
-    "eslint-config-mysticatea": "^13.0.2",
-    "fs-extra": "^9.0.1",
-    "mocha": "^8.2.1",
+    "eslint-config-standard-qiwi": "^16.0.3",
+    "fs-extra": "^10.0.0",
+    "mocha": "^8.4.0",
     "nyc": "^15.1.0",
-    "p-queue": "^6.6.2",
+    "p-queue": "^7.1.0",
     "power-assert": "^1.6.1",
     "rimraf": "^3.0.2",
     "jsdoc": "^3.6.6"

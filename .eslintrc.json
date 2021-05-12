@@ -1,6 +1,6 @@
 {
     "root": true,
-    "extends": ["mysticatea", "mysticatea/node"],
+    "extends": ["standard-qiwi"],
     "rules": {
         "prefer-rest-params": "off",
         "prefer-spread": "off",
