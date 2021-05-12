@@ -1,3 +1,10 @@
+## [4.1.7](https://github.com/qiwi-forks/npm-run-all/compare/v4.1.6...v4.1.7) (2021-05-12)
+
+
+### Bug Fixes
+
+* **pkg:** up deps, fix vuls ([615c192](https://github.com/qiwi-forks/npm-run-all/commit/615c192c640141815a59b7b42a7b5e24970eeae3))
+
 ## [4.1.6](https://github.com/qiwi-forks/npm-run-all/compare/v4.1.5...v4.1.6) (2020-12-11)
 
 
